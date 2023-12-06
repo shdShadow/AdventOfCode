@@ -132,6 +132,10 @@ int main(int argc, char *argv[]) {
           numbers.push_back(singleNumber);
           singleNumber.clear();
         }
+        if (i == line.length() - 1 && singleNumber.size() > 0){
+          numbers.push_back(singleNumber);
+          singleNumber.clear();
+        }
       }
       y++;
       matrix.push_back(line);
@@ -147,7 +151,7 @@ int main(int argc, char *argv[]) {
         tot += n[j].value * multiplier;
       }
       sum += tot;
-      cout << tot << endl;
+      cout << sum << endl;
     }
   }
 }
