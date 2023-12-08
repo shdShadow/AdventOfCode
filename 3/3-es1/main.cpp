@@ -6,27 +6,27 @@
 #include <string>
 #include <vector>
 using namespace std;
-struct Number {
-  int value;
-  int x;
-  int y;
-  Number(int v, int _x, int _y){
-    value = v;
-    x = _x;
-    y = _y;
-  }
-};
-bool checkIfSymbolNear(vector<Number> n, vector<string> matrix){
-  bool isValid = false;
-  for (int i = 0; i < n.size(); i ++){
-    Number digit = n[i];
-    //check North
-    if(digit.y - 1 >= 0 ){
-      char c = matrix[digit.y-1][digit.x];
-      if(!(int(c) - 48>= 0 && int(c) - 48 <= 9)){
-        if(matrix[digit.y-1][digit.x] != '.'){
-          isValid = true;
-          break;
+  struct Number {
+    int value;
+    int x;
+    int y;
+    Number(int v, int _x, int _y){
+      value = v;
+      x = _x;
+      y = _y;
+    }
+  };
+  bool checkIfSymbolNear(vector<Number> n, vector<string> matrix){
+    bool isValid = false;
+    for (int i = 0; i < n.size(); i ++){
+      Number digit = n[i];
+      //check North
+      if(digit.y - 1 >= 0 ){
+        char c = matrix[digit.y-1][digit.x];
+        if(!(int(c) - 48>= 0 && int(c) - 48 <= 9)){
+          if(matrix[digit.y-1][digit.x] != '.'){
+            isValid = true;
+            break;
         }
       }
     }
